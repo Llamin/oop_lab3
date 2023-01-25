@@ -182,9 +182,17 @@ int main()
 
         case 10:
             {
-                std::cout << "Input ID of order you want to see: ";
-                int index = numInput() - 1;
-                ord[index].show_all();
+                if(ord.getVectorOrderListSize() > 0)
+                {
+                    std::cout << "Input ID of order you want to see [up to "<< ord.getVectorOrderListSize() <<"]: ";
+                    int index = numInput();
+                    if(index <= ord.getVectorOrderListSize())
+                        ord[index - 1].show_all();
+                    else
+                        std::cout << "Your input is out of bounds! You should enter ID from 1 up to " << ord.getVectorOrderListSize() << std::endl;
+                }
+                else
+                    std::cout << "List of orders is empty!" << std::endl;
             }
         break;
 
@@ -220,22 +228,34 @@ int main()
                     {
                     case 1:
                     {
-                        std::cin >> all.getLastGPU();
+                        if(all.getVectorSizeGPU() > 0)
+                            std::cin >> all.getLastGPU();
+                        else
+                            std::cout << "List of GPUs is empty!" << std::endl;
                         break;
                     }
                     case 2:
                     {
-                        std::cin >> all.getLastCPU();
+                        if(all.getVectorSizeCPU() > 0)
+                            std::cin >> all.getLastCPU();
+                        else
+                            std::cout << "List of CPUs is empty!" << std::endl;
                         break;
                     }
                     case 3:
                     {
-                        std::cin >> all.getLastHardDrive();
+                        if(all.getVectorSizeHardDrive() > 0)
+                            std::cin >> all.getLastHardDrive();
+                        else
+                            std::cout << "List of Hard Drives is empty!" << std::endl;
                         break;
                     }
                     case 4:
                     {
-                        std::cin >> all.getLastRAM();
+                        if(all.getVectorSizeRAM() > 0)
+                            std::cin >> all.getLastRAM();
+                        else
+                            std::cout << "List of RAMs is empty!" << std::endl;
                         break;
                     }
                     case 0:
@@ -283,66 +303,78 @@ int main()
                     {
                     case 1:
                     {
-                        if(all.getFirstGPU() > all.getLastGPU())
-                        {
-                            std::cout << "The price of first GPU (" << all.getFirstGPU().getPrice() << " USD) is bigger than the price of the last one (" << all.getLastGPU().getPrice() << " USD)." << std::endl;
-                        }
-                        else if(all.getFirstGPU() < all.getLastGPU())
-                        {
-                            std::cout << "The price of first GPU (" << all.getFirstGPU().getPrice() << " USD) is lesser than the price of the last one (" << all.getLastGPU().getPrice() << " USD)." << std::endl;
-                        }
+                        if(all.getVectorSizeGPU() > 1)
+                            if(all.getFirstGPU() > all.getLastGPU())
+                            {
+                                std::cout << "The price of first GPU (" << all.getFirstGPU().getPrice() << " USD) is bigger than the price of the last one (" << all.getLastGPU().getPrice() << " USD)." << std::endl;
+                            }
+                            else if(all.getFirstGPU() < all.getLastGPU())
+                            {
+                                std::cout << "The price of first GPU (" << all.getFirstGPU().getPrice() << " USD) is lesser than the price of the last one (" << all.getLastGPU().getPrice() << " USD)." << std::endl;
+                            }
+                            else
+                            {
+                                std::cout << "The price of first GPU (" << all.getFirstGPU().getPrice() << " USD) is equal to the price of the last one (" << all.getLastGPU().getPrice() << " USD)." << std::endl;
+                            }
                         else
-                        {
-                            std::cout << "The price of first GPU (" << all.getFirstGPU().getPrice() << " USD) is equal to the price of the last one (" << all.getLastGPU().getPrice() << " USD)." << std::endl;
-                        }
+                            std::cout << "Not enough GPUs in list to work! Try entering some more." << std::endl;
                         break;
                     }
                     case 2:
                     {
-                        if(all.getFirstCPU() > all.getLastCPU())
-                        {
-                            std::cout << "The price of first CPU (" << all.getFirstCPU().getPrice() << " USD) is bigger than the price of the last one (" + all.getLastCPU().getPrice() << " USD)." << std::endl;
-                        }
-                        else if(all.getFirstCPU() < all.getLastCPU())
-                        {
-                            std::cout << "The price of first CPU (" << all.getFirstCPU().getPrice() << " USD) is lesser than the price of the last one (" + all.getLastCPU().getPrice() << " USD)." << std::endl;
-                        }
+                        if(all.getVectorSizeCPU() > 1)
+                            if(all.getFirstCPU() > all.getLastCPU())
+                            {
+                                std::cout << "The price of first CPU (" << all.getFirstCPU().getPrice() << " USD) is bigger than the price of the last one (" + all.getLastCPU().getPrice() << " USD)." << std::endl;
+                            }
+                            else if(all.getFirstCPU() < all.getLastCPU())
+                            {
+                                std::cout << "The price of first CPU (" << all.getFirstCPU().getPrice() << " USD) is lesser than the price of the last one (" + all.getLastCPU().getPrice() << " USD)." << std::endl;
+                            }
+                            else
+                            {
+                                std::cout << "The price of first CPU (" << all.getFirstCPU().getPrice() << " USD) is equal to the price of the last one (" + all.getLastCPU().getPrice() << " USD)." << std::endl;
+                            }
                         else
-                        {
-                            std::cout << "The price of first CPU (" << all.getFirstCPU().getPrice() << " USD) is equal to the price of the last one (" + all.getLastCPU().getPrice() << " USD)." << std::endl;
-                        }
+                            std::cout << "Not enough CPUs in list to work! Try entering some more." << std::endl;
                         break;
                     }
                     case 3:
                     {
-                        if(all.getFirstHardDrive() > all.getLastHardDrive())
-                        {
-                            std::cout << "The price of first Hard Drive (" << all.getFirstHardDrive().getPrice() << " USD) is bigger than the price of the last one (" << all.getLastHardDrive().getPrice() << " USD)." << std::endl;
-                        }
-                        else if(all.getFirstHardDrive() < all.getLastHardDrive())
-                        {
-                            std::cout << "The price of first Hard Drive (" << all.getFirstHardDrive().getPrice() << " USD) is lesser than the price of the last one (" << all.getLastHardDrive().getPrice() << " USD)." << std::endl;
-                        }
+                        if(all.getVectorSizeHardDrive() > 1)
+                            if(all.getFirstHardDrive() > all.getLastHardDrive())
+                            {
+                                std::cout << "The price of first Hard Drive (" << all.getFirstHardDrive().getPrice() << " USD) is bigger than the price of the last one (" << all.getLastHardDrive().getPrice() << " USD)." << std::endl;
+                            }
+                            else if(all.getFirstHardDrive() < all.getLastHardDrive())
+                            {
+                                std::cout << "The price of first Hard Drive (" << all.getFirstHardDrive().getPrice() << " USD) is lesser than the price of the last one (" << all.getLastHardDrive().getPrice() << " USD)." << std::endl;
+                            }
+                            else
+                            {
+                                std::cout << "The price of first Hard Drive (" << all.getFirstHardDrive().getPrice() << " USD) is equal to the price of the last one (" << all.getLastHardDrive().getPrice() << " USD)." << std::endl;
+                            }
                         else
-                        {
-                            std::cout << "The price of first Hard Drive (" << all.getFirstHardDrive().getPrice() << " USD) is equal to the price of the last one (" << all.getLastHardDrive().getPrice() << " USD)." << std::endl;
-                        }
+                            std::cout << "Not enough Hard Drives in list to work! Try entering some more." << std::endl;
                         break;
                     }
                     case 4:
                     {
-                        if(all.getFirstRAM() > all.getLastRAM())
-                        {
-                            std::cout << "The price of first RAM (" << all.getFirstRAM().getPrice() << " USD) is bigger than the price of the last one (" << all.getLastRAM().getPrice() << " USD)." << std::endl;
-                        }
-                        else if(all.getFirstRAM() < all.getLastRAM())
-                        {
-                            std::cout << "The price of first RAM (" << all.getFirstRAM().getPrice() << " USD) is lesser than the price of the last one (" << all.getLastRAM().getPrice() << " USD)." << std::endl;
-                        }
+                        if(all.getVectorSizeRAM() > 1)
+                            if(all.getFirstRAM() > all.getLastRAM())
+                            {
+                                std::cout << "The price of first RAM (" << all.getFirstRAM().getPrice() << " USD) is bigger than the price of the last one (" << all.getLastRAM().getPrice() << " USD)." << std::endl;
+                            }
+                            else if(all.getFirstRAM() < all.getLastRAM())
+                            {
+                                std::cout << "The price of first RAM (" << all.getFirstRAM().getPrice() << " USD) is lesser than the price of the last one (" << all.getLastRAM().getPrice() << " USD)." << std::endl;
+                            }
+                            else
+                            {
+                                std::cout << "The price of first RAM (" << all.getFirstRAM().getPrice() << " USD) is equal to the price of the last one (" << all.getLastRAM().getPrice() << " USD)." << std::endl;
+                            }
                         else
-                        {
-                            std::cout << "The price of first RAM (" << all.getFirstRAM().getPrice() << " USD) is equal to the price of the last one (" << all.getLastRAM().getPrice() << " USD)." << std::endl;
-                        }
+                            std::cout << "Not enough RAMs in list to work! Try entering some more." << std::endl;
                         break;
                     }
                     case 0:
@@ -390,66 +422,78 @@ int main()
                     {
                     case 1:
                     {
-                        if(all.getFirstGPU() == all.getLastGPU())
-                        {
-                            std::cout << "The first GPU and last GPU are equal." << std::endl;
-                        }
-                        else if(all.getFirstGPU() != all.getLastGPU())
-                        {
-                            std::cout << "The first GPU and last GPU are NOT equal." << std::endl;
-                        }
+                        if(all.getVectorSizeGPU() > 1)
+                            if(all.getFirstGPU() == all.getLastGPU())
+                            {
+                                std::cout << "The first GPU and last GPU are equal." << std::endl;
+                            }
+                            else if(all.getFirstGPU() != all.getLastGPU())
+                            {
+                                std::cout << "The first GPU and last GPU are NOT equal." << std::endl;
+                            }
+                            else
+                            {
+                                std::cout << "You are not supposed to see it." << std::endl;
+                            }
                         else
-                        {
-                            std::cout << "You are not supposed to see it." << std::endl;
-                        }
+                            std::cout << "Not enough GPUs in list to work! Try entering some more." << std::endl;
                         break;
                     }
                     case 2:
                     {
-                        if(all.getFirstCPU() == all.getLastCPU())
-                        {
-                            std::cout << "The first CPU and last CPU are equal." << std::endl;
-                        }
-                        else if(all.getFirstGPU() != all.getLastGPU())
-                        {
-                            std::cout << "The first CPU and last CPU are NOT equal." << std::endl;
-                        }
+                        if(all.getVectorSizeCPU() > 1)
+                            if(all.getFirstCPU() == all.getLastCPU())
+                            {
+                                std::cout << "The first CPU and last CPU are equal." << std::endl;
+                            }
+                            else if(all.getFirstGPU() != all.getLastGPU())
+                            {
+                                std::cout << "The first CPU and last CPU are NOT equal." << std::endl;
+                            }
+                            else
+                            {
+                                std::cout << "You are not supposed to see it." << std::endl;
+                            }
                         else
-                        {
-                            std::cout << "You are not supposed to see it." << std::endl;
-                        }
+                            std::cout << "Not enough CPUs in list to work! Try entering some more." << std::endl;
                         break;
                     }
                     case 3:
                     {
-                        if(all.getFirstHardDrive() == all.getLastHardDrive())
-                        {
-                            std::cout << "The first Hard Drive and last Hard Drive are equal." << std::endl;
-                        }
-                        else if(all.getFirstGPU() != all.getLastGPU())
-                        {
-                            std::cout << "The first Hard Drive and last Hard Drive are NOT equal." << std::endl;
-                        }
+                        if(all.getVectorSizeHardDrive() > 1)
+                            if(all.getFirstHardDrive() == all.getLastHardDrive())
+                            {
+                                std::cout << "The first Hard Drive and last Hard Drive are equal." << std::endl;
+                            }
+                            else if(all.getFirstGPU() != all.getLastGPU())
+                            {
+                                std::cout << "The first Hard Drive and last Hard Drive are NOT equal." << std::endl;
+                            }
+                            else
+                            {
+                                std::cout << "You are not supposed to see it." << std::endl;
+                            }
                         else
-                        {
-                            std::cout << "You are not supposed to see it." << std::endl;
-                        }
+                            std::cout << "Not enough Hard Drives in list to work! Try entering some more." << std::endl;
                         break;
                     }
                     case 4:
                     {
-                        if(all.getFirstRAM() == all.getLastRAM())
-                        {
-                            std::cout << "The first RAM and last RAM are equal." << std::endl;
-                        }
-                        else if(all.getFirstGPU() != all.getLastGPU())
-                        {
-                            std::cout << "The first RAM and last RAM are NOT equal." << std::endl;
-                        }
+                        if(all.getVectorSizeRAM() > 1)
+                            if(all.getFirstRAM() == all.getLastRAM())
+                            {
+                                std::cout << "The first RAM and last RAM are equal." << std::endl;
+                            }
+                            else if(all.getFirstGPU() != all.getLastGPU())
+                            {
+                                std::cout << "The first RAM and last RAM are NOT equal." << std::endl;
+                            }
+                            else
+                            {
+                                std::cout << "You are not supposed to see it." << std::endl;
+                            }
                         else
-                        {
-                            std::cout << "You are not supposed to see it." << std::endl;
-                        }
+                            std::cout << "Not enough RAMs in list to work! Try entering some more." << std::endl;
                         break;
                     }
                     case 0:
@@ -497,22 +541,34 @@ int main()
                     {
                     case 1:
                     {
-                        all.getLastGPU() = all.getFirstGPU();
+                        if(all.getVectorSizeGPU() > 1)
+                            all.getLastGPU() = all.getFirstGPU();
+                        else
+                            std::cout << "Not enough GPUs in list to work! Try entering some more." << std::endl;
                         break;
                     }
                     case 2:
                     {
-                        all.getLastCPU() = all.getFirstCPU();
+                        if(all.getVectorSizeCPU() > 1)
+                            all.getLastCPU() = all.getFirstCPU();
+                        else
+                            std::cout << "Not enough CPUs in list to work! Try entering some more." << std::endl;
                         break;
                     }
                     case 3:
                     {
-                        all.getLastHardDrive() = all.getFirstHardDrive();
+                        if(all.getVectorSizeHardDrive() > 1)
+                            all.getLastHardDrive() = all.getFirstHardDrive();
+                        else
+                            std::cout << "Not enough Hard Drives in list to work! Try entering some more." << std::endl;
                         break;
                     }
                     case 4:
                     {
-                        all.getLastRAM() = all.getFirstRAM();
+                        if(all.getVectorSizeRAM() > 1)
+                            all.getLastRAM() = all.getFirstRAM();
+                        else
+                            std::cout << "Not enough RAMs in list to work! Try entering some more." << std::endl;
                         break;
                     }
                     case 0:

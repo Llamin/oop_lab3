@@ -13,6 +13,7 @@ public:
     void addOrder(Order temp);
     void showOrders();
     Order & operator[] (int index);
+    int getVectorOrderListSize();
 };
 
 

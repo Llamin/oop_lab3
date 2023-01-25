@@ -305,6 +305,8 @@ void Items::increaseDateAll()
             {
                 gpus[i].increaseDay();
             }
+        else
+            std::cout << "List of GPUs is empty!" << std::endl;
 
 
         if (!cpus.empty())
@@ -312,18 +314,24 @@ void Items::increaseDateAll()
             {
                 cpus[i].increaseDay();
             }
+        else
+            std::cout << "List of CPUs is empty!" << std::endl;
 
         if (!hardDrives.empty())
             for (int i = 0; i < (int) hardDrives.size(); i++)
             {
                 hardDrives[i].increaseDay();
             }
+        else
+            std::cout << "List of Hard Drives is empty!" << std::endl;
 
         if (!rams.empty())
             for (int i = 0; i < (int) rams.size(); i++)
             {
                 rams[i].increaseDay();
             }
+        else
+            std::cout << "List of RAMs is empty!" << std::endl;
 }
 
 void Items::decreaseDateAll()
@@ -333,25 +341,35 @@ void Items::decreaseDateAll()
             {
                 gpus[i].decreaseDay();
             }
-
+        else
+            std::cout << "List of GPUs is empty!" << std::endl;
 
         if (!cpus.empty())
             for (int i = 0; i < (int) cpus.size(); i++)
             {
                 cpus[i].decreaseDay();
             }
+        else
+            std::cout << "List of CPUs is empty!" << std::endl;
+
 
         if (!hardDrives.empty())
             for (int i = 0; i < (int) hardDrives.size(); i++)
             {
                 hardDrives[i].decreaseDay();
             }
+        else
+            std::cout << "List of Hard Drives is empty!" << std::endl;
+
 
         if (!rams.empty())
             for (int i = 0; i < (int) rams.size(); i++)
             {
                 rams[i].decreaseDay();
             }
+        else
+            std::cout << "List of RAMs is empty!" << std::endl;
+
 }
 
 void Items::increasePriceAll()
@@ -363,6 +381,8 @@ void Items::increasePriceAll()
             {
                 gpus[i] = gpus[i] + priceChange;
             }
+        else
+            std::cout << "List of GPUs is empty!" << std::endl;
 
 
         if (!cpus.empty())
@@ -370,18 +390,24 @@ void Items::increasePriceAll()
             {
                 cpus[i] = cpus[i] + priceChange;
             }
+        else
+            std::cout << "List of CPUs is empty!" << std::endl;
 
         if (!hardDrives.empty())
             for (int i = 0; i < (int) hardDrives.size(); i++)
             {
                 hardDrives[i] = hardDrives[i] + priceChange;
             }
+        else
+            std::cout << "List of Hard Drives is empty!" << std::endl;
 
         if (!rams.empty())
             for (int i = 0; i < (int) rams.size(); i++)
             {
                 rams[i] = rams[i] + priceChange;
             }
+        else
+            std::cout << "List of RAMs is empty!" << std::endl;
 }
 
 void Items::decreasePriceAll()
@@ -393,6 +419,8 @@ void Items::decreasePriceAll()
             {
                 gpus[i] = gpus[i] - priceChange;
             }
+        else
+            std::cout << "List of GPUs is empty!" << std::endl;
 
 
         if (!cpus.empty())
@@ -400,18 +428,24 @@ void Items::decreasePriceAll()
             {
                 cpus[i] = cpus[i] - priceChange;
             }
+        else
+            std::cout << "List of CPUs is empty!" << std::endl;
 
         if (!hardDrives.empty())
             for (int i = 0; i < (int) hardDrives.size(); i++)
             {
                 hardDrives[i] = hardDrives[i] - priceChange;
             }
+        else
+            std::cout << "List of Hard Drives is empty!" << std::endl;
 
         if (!rams.empty())
             for (int i = 0; i < (int) rams.size(); i++)
             {
                 rams[i] = rams[i] - priceChange;
             }
+        else
+            std::cout << "List of RAMs is empty!" << std::endl;
 }
 
 Gpu& Items::getLastGPU()
@@ -452,4 +486,24 @@ HardDrive& Items::getFirstHardDrive()
 Ram& Items::getFirstRAM()
 {
     return rams.front();
+}
+
+int Items::getVectorSizeGPU()
+{
+    return gpus.size();
+}
+
+int Items::getVectorSizeCPU()
+{
+    return cpus.size();
+}
+
+int Items::getVectorSizeHardDrive()
+{
+    return hardDrives.size();
+}
+
+int Items::getVectorSizeRAM()
+{
+    return rams.size();
 }

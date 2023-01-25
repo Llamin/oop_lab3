@@ -31,3 +31,8 @@ Order& Orders::operator[] (int index)
 {
     return orderList[index];
 }
+
+int Orders::getVectorOrderListSize()
+{
+    return orderList.size();
+}

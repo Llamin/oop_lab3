@@ -40,6 +40,10 @@ public:
     Cpu& getFirstCPU();
     HardDrive& getFirstHardDrive();
     Ram& getFirstRAM();
+    int getVectorSizeGPU();
+    int getVectorSizeCPU();
+    int getVectorSizeHardDrive();
+    int getVectorSizeRAM();
 
 
 };
