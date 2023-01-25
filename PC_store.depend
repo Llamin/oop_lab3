@@ -1,0 +1,171 @@
+# depslib dependency file v1.0
+1674610087 source:c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\main.cpp
+	<iostream>
+	<string>
+	<vector>
+	<ctime>
+	<limits>
+	<fstream>
+	"Gpu.h"
+	"Cpu.h"
+	"HardDrive.h"
+	"Ram.h"
+	"Order.h"
+	"Items.h"
+	"Orders.h"
+	"pcStoreLib.h"
+
+1674610805 source:c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\components.cpp
+	<iostream>
+	<string>
+	<vector>
+	<ctime>
+	<limits>
+	"Components.h"
+
+1674610987 c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\components.h
+	"Date.h"
+
+1674609904 source:c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\gpu.cpp
+	<iostream>
+	<string>
+	<vector>
+	<ctime>
+	<limits>
+	"pcStoreLib.h"
+	"Date.h"
+	"Gpu.h"
+
+1674609903 c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\gpu.h
+	"Components.h"
+
+1671923846 c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\pcstorelib.h
+
+1673189904 source:c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\pcstorelib.cpp
+	<iostream>
+	<string>
+	<vector>
+	<ctime>
+	<limits>
+	"pcStoreLib.h"
+	"Gpu.h"
+	"Cpu.h"
+	"HardDrive.h"
+	"Ram.h"
+	"Order.h"
+	"Items.h"
+	"Orders.h"
+
+1674611013 c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\cpu.h
+	<iostream>
+	"Components.h"
+
+1674609904 source:c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\cpu.cpp
+	<iostream>
+	<string>
+	<vector>
+	<ctime>
+	<limits>
+	"pcStoreLib.h"
+	"Date.h"
+	"Cpu.h"
+
+1674609903 c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\harddrive.h
+	"Components.h"
+
+1674609903 source:c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\harddrive.cpp
+	<iostream>
+	<string>
+	<vector>
+	<ctime>
+	<limits>
+	"pcStoreLib.h"
+	"Date.h"
+	"HardDrive.h"
+
+1674609903 source:c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\ram.cpp
+	<iostream>
+	<string>
+	<vector>
+	<ctime>
+	<limits>
+	"pcStoreLib.h"
+	"Date.h"
+	"Ram.h"
+
+1674609903 c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\ram.h
+	"Components.h"
+
+1671917098 c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\table.h
+	<iostream>
+	<fstream>
+
+1671914052 source:c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\table.cpp
+	"Table.h"
+
+1674606358 source:c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\items.cpp
+	<iostream>
+	<string>
+	<vector>
+	<ctime>
+	<limits>
+	<fstream>
+	<iterator>
+	"pcStoreLib.h"
+	"Items.h"
+
+1674606358 c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\items.h
+	<string>
+	<iostream>
+	"Gpu.h"
+	"Cpu.h"
+	"HardDrive.h"
+	"Ram.h"
+	"TableData.h"
+
+1671934027 c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\order.h
+	"Gpu.h"
+	"Cpu.h"
+	"HardDrive.h"
+	"Ram.h"
+	"Date.h"
+	"items.h"
+
+1674600775 source:c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\order.cpp
+	<iostream>
+	<string>
+	<vector>
+	<ctime>
+	<limits>
+	<fstream>
+	"pcStoreLib.h"
+	"Date.h"
+	"Order.h"
+
+1674593918 c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\orders.h
+	"Order.h"
+	"TableData.h"
+
+1674594148 source:c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\orders.cpp
+	<iostream>
+	<string>
+	<vector>
+	<ctime>
+	<limits>
+	"pcStoreLib.h"
+	"Orders.h"
+
+1671917734 c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\tabledata.h
+	<iostream>
+	<fstream>
+
+1671917359 source:c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\tabledata.cpp
+	"TableData.h"
+
+1674609903 c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\date.h
+
+1674609903 source:c:\users\zebra\onedrive\Документы\Навчання\myroslava\lab2\pc_store\date.cpp
+	<iostream>
+	<ctime>
+	"Date.h"
+
