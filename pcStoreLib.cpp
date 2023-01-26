@@ -31,7 +31,7 @@ int numInput()
             if (isdigit(input[i]) == false)
             {
                 check = 0;
-                std::cout << "Your input is incorrect. You should enter only numbers (equal to 0 and more).\nTry again:" << std::endl;
+                std::cout << "Your input is incorrect. You should enter only integer numbers (equal to 0 and more).\nTry again:" << std::endl;
                 break;
             }
 
