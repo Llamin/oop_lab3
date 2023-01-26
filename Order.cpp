@@ -30,6 +30,7 @@ Order::Order(const Order& o)
     cpus = o.cpus;
     hardDrives = o.hardDrives;
     rams = o.rams;
+    d = o.d;
 }
 
 int Order::add_item(Items storage)
